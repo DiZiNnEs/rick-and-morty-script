@@ -8,13 +8,11 @@ module.exports.insertCharactersIntoDb = async (name, jsonb) => {
       INSERT INTO characters(name, data)
         VALUES ('${name}', '${JSON.stringify(jsonb)}');
   `
-  pool.query(queryCharacter, (res, err) => {
-    console.log(res, err)
-  })
-  // await pool.query(queryCharacter)
-  //   .then(() => console.log('successfully add new data into CHARACTERS table'))
-  //   .catch((err) => console.log(`${err}`))
-  //   .finally(pool.end());
-  pool.end()
+
+  await pool.query(queryCharacter)
+    .then(() => console.log('successfully add new data into CHARACTERS table'))
+    .catch((err) => console.log(`${err}`))
+    .finally(pool.end());
+
   return null;
 }
