@@ -4,7 +4,7 @@ const { Pool } = require('pg');
 
 const DATABASE_CONFIG = {
   user: "postgres",
-  host: "db",
+  host: "localhost",
   database: "database",
   password: "postgres",
   port: 5432,
@@ -22,14 +22,10 @@ module.exports.createCharacterTable = async () => {
       );
   `
 
-  pool.query(queryCharacter, (res, err) => {
-    console.log(res, err)
-  })
-
-  // await pool.query(queryCharacter)
-  //   .then(() => console.log('successfully create CHARACTERS table'))
-  //   .catch((err) => console.log(`ERROR in models CHARACTERS: ${err}`))
-  //   .finally(pool.end());
+  await pool.query(queryCharacter)
+    .then(() => console.log('successfully create CHARACTERS table'))
+    .catch((err) => console.log(`ERROR in models CHARACTERS: ${err}`))
+    .finally(pool.end());
 
   return null;
 }
