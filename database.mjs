@@ -1,6 +1,7 @@
-// const connectionString = 'postgres://candidate:PASSWORD@rc1c2m0keqdcncuwizmx.mdb.yandexcloud.net:6432/db1?ssl=true';
+import Pool from 'pg';
 
-const { Pool } = require('pg');
+const {pool1} = Pool;
+
 
 const DATABASE_CONFIG = {
   user: "postgres",
@@ -10,8 +11,9 @@ const DATABASE_CONFIG = {
   port: 5432,
 };
 
-module.exports.createCharacterTable = async () => {
-  const pool = new Pool(DATABASE_CONFIG)
+let createCharacterTable;
+export default createCharacterTable = async () => {
+  const pool = new pool1(DATABASE_CONFIG)
 
   const queryCharacter = `
       CREATE TABLE IF NOT EXISTS characters
