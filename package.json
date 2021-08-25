@@ -1,0 +1,14 @@
+{
+  "name": "rick-and-morty-script",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "pg": "^8.7.1"
+  }
+}
