@@ -1,14 +1,9 @@
 // const connectionString = 'postgres://candidate:PASSWORD@rc1c2m0keqdcncuwizmx.mdb.yandexcloud.net:6432/db1?ssl=true';
 
 const { Pool } = require('pg');
+const { DATABASE_CONFIG } = require("./modelsConfig");
 
-const DATABASE_CONFIG = {
-  user: "postgres",
-  host: "localhost",
-  database: "database",
-  password: "postgres",
-  port: 5432,
-};
+
 
 module.exports.createCharacterTable = async () => {
   const pool = new Pool(DATABASE_CONFIG)
