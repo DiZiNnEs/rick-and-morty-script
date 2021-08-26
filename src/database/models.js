@@ -1,8 +1,5 @@
-// const connectionString = 'postgres://candidate:PASSWORD@rc1c2m0keqdcncuwizmx.mdb.yandexcloud.net:6432/db1?ssl=true';
-
 const { Pool } = require('pg');
 const { DATABASE_CONFIG } = require("./modelsConfig");
-
 
 
 module.exports.createCharacterTable = async () => {
