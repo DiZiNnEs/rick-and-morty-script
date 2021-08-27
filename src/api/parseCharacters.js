@@ -2,7 +2,6 @@ const axios = require("axios");
 const { getCharactersPages } = require("./getPages");
 const { insertCharactersIntoDb } = require("../database/queries");
 
-
 module.exports.parseCharacters = async () => {
   const pages = await getCharactersPages();
 
@@ -21,4 +20,4 @@ module.exports.parseCharacters = async () => {
   }
 
   return null;
-}
+};
