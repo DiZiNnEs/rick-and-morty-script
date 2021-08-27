@@ -14,5 +14,10 @@
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2"
   }
 }
